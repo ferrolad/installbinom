@@ -446,12 +446,6 @@ function InstallPMA() {
 }
 
 function InstallBinom(){
-	if [ ! -d /web/www/$tracking_domain ]; then
-		mkdir /web/www/$tracking_domain
-	else
-		/bin/rm -rf /web/www/$tracking_domain/*
-	fi
-
 	cd /web/www/${tracking_domain}
 	wget -P /web/www/${tracking_domain} binom.org/download/Install_Binom_Latest.tar.gz
 	tar -xzf /web/www/${tracking_domain}/Install_Binom_Latest.tar.gz -C /web/www/${tracking_domain}
