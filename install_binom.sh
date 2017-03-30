@@ -268,7 +268,7 @@ sed -i 's#skip-external-locking#skip-external-locking\nlog-error = /webserv/logs
 sed -i 's#log-bin=mysql-bin#log-bin=mysql-bin\nmax_binlog_size=512M\nexpire_logs_days=3#g' /etc/my.cnf
 
 #add binom config
-cat > /etc/my.cnf.d/binom.conf <<eof
+cat >> /etc/my.cnf <<eof
 [mysqld]
 table_definition_cache=1600
 open_files_limit=5000
@@ -381,18 +381,9 @@ listen.group = www
 listen.mode = 0666
 user = www
 group = www
-request_terminate_timeout = 3600
-#pm = dynamic
 pm = ondemand
-#pm.max_children = 30
 pm.max_children = 1000
-pm.start_servers = 2
-pm.min_spare_servers = 1
-pm.max_spare_servers = 5
 pm.status_path = /panel/php-status-${status_page_id}
-catch_workers_output = yes
-
-pm.process_idle_timeout = 10s
 pm.max_requests = 0
 chdir = /
 eof
