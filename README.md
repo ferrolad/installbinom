@@ -14,7 +14,7 @@ PHPMyAdmin: 4.5.5.1
 Последняя версия Ioncube и Binom
 
 
-
+## Инструкция:
 Подключаемся по SSH к серверу, заходим с пользователем root. Вводим команды по очереди.
 1. yum -y install screen wget curl
 2. screen -S binom (новый сеанс screen)
